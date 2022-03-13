@@ -1,4 +1,3 @@
-
 <%@page import="com.tests.jsplogin.model.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,25 +10,26 @@
     <body style="background: linear-gradient(45deg, black, transparent)">
         <div class="container text-white" style="padding: 30px;">
 
-            <h1>Login Success..</h1>
+            <h1>File Upload</h1>
             <%
                 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
                 if (session.getAttribute("user") != null) {
                     Users u = (Users) session.getAttribute("user");
-                    out.print(u.getUid() + " " + u.getUname() + "  " + u.getEmail());
+                    out.print( u.getUname() + " upload a file.");
                 } else {
                     response.sendRedirect("loginpg.jsp");
                 }
             %>
-            <form action="LogoutUser">
+            <form action="fileUpload" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <input class="btn btn-primary" type="submit" value="Logout">
+                    <label for="files" class="form-label">Select Files</label>
+                    <input type="file" class="form-control" id="files" name="files" multiple>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Upload">
                 </div>
             </form>
-            <div class="mb-3">
-                <a href="fileupload.jsp"  >Sign up</a>
-            </div>
-        </div>
 
+        </div>
     </body>
 </html>

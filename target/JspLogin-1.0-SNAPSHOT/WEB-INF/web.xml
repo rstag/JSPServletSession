@@ -8,6 +8,10 @@
         <servlet-name>LogoutUser</servlet-name>
         <servlet-class>com.tests.jsplogin.controller.LogoutUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FileUploadController</servlet-name>
+        <servlet-class>com.tests.jsplogin.controller.FileUploadController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsersController</servlet-name>
         <url-pattern>/checkUser</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>LogoutUser</servlet-name>
         <url-pattern>/LogoutUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileUploadController</servlet-name>
+        <url-pattern>/fileUpload</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

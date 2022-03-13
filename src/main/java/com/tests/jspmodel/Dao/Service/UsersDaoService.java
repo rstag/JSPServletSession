@@ -36,7 +36,6 @@ public class UsersDaoService {
                     u.setUname(rs.getString("uname"));
                     u.setEmail(rs.getString("email"));
                     u.setPassword(rs.getString("password"));
-                    System.out.println("UDS " + u.toString());
                 } while (rs.next());
             }
         } catch (Exception e) {
